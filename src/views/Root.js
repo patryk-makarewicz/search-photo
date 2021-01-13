@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import GlobalStyle from 'theme/GlobalStyle';
 
+import StartView from './startView/startView';
+import ResultView from './resultView/resultView';
+
 const Root = () => {
   const [inputValue, setInputValue] = useState('');
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState(false);
   const clientID = '';
 
   const handleInputChange = (e) => {
@@ -25,23 +28,22 @@ const Root = () => {
   return (
     <>
       <GlobalStyle />
-      <div>
-        <h1>Search photo</h1>
-        <input
-          type="text"
-          name="photo"
-          placeholder="Search photo"
-          onChange={handleInputChange}
-          onKeyDown={(e) => handleInputSubmit(e)}
-          value={inputValue}
+      {!result ? (
+        <StartView
+          handleInputChange={handleInputChange}
+          handleInputSubmit={handleInputSubmit}
+          inputValue={inputValue}
+          handleInputDelete={handleInputDelete}
         />
-        <button type="button" onClick={handleInputDelete}>
-          X
-        </button>
-        {result.map((picture) => (
-          <img key={picture.id} src={picture.urls.small} alt="Your search result" />
-        ))}
-      </div>
+      ) : (
+        <ResultView
+          result={result}
+          handleInputChange={handleInputChange}
+          handleInputSubmit={handleInputSubmit}
+          inputValue={inputValue}
+          handleInputDelete={handleInputDelete}
+        />
+      )}
     </>
   );
 };
