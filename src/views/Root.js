@@ -3,19 +3,23 @@ import axios from 'axios';
 import GlobalStyle from 'theme/GlobalStyle';
 
 const Root = () => {
-  const [photo, setPhoto] = useState('');
+  const [inputValue, setInputValue] = useState('');
   const [result, setResult] = useState([]);
   const clientID = '';
 
-  const handleChange = (e) => {
-    setPhoto(e.target.value);
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    const url = `https://api.unsplash.com/search/photos?page=1&query=${photo}&client_id=${clientID}`;
+  const handleInputSubmit = (e) => {
+    const url = `https://api.unsplash.com/search/photos?page=1&query=${inputValue}&client_id=${clientID}`;
     if (e.keyCode === 13) {
       axios.get(url).then((response) => setResult(response.data.results));
     }
+  };
+
+  const handleInputDelete = () => {
+    setInputValue('');
   };
 
   return (
@@ -27,9 +31,13 @@ const Root = () => {
           type="text"
           name="photo"
           placeholder="Search photo"
-          onChange={handleChange}
-          onKeyDown={(e) => handleSubmit(e)}
+          onChange={handleInputChange}
+          onKeyDown={(e) => handleInputSubmit(e)}
+          value={inputValue}
         />
+        <button type="button" onClick={handleInputDelete}>
+          X
+        </button>
         {result.map((picture) => (
           <img key={picture.id} src={picture.urls.small} alt="Your search result" />
         ))}
