@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Input from '../../components/Input/input';
 import Suggestion from '../../components/Suggestion/suggestion';
 
 const StartView = ({
@@ -12,17 +13,12 @@ const StartView = ({
 }) => (
   <div>
     <h1>Search photo</h1>
-    <input
-      type="text"
-      name="photo"
-      placeholder="Search photo"
-      onChange={handleInputChange}
-      onKeyDown={(e) => handleInputSubmit(e)}
-      value={inputValue}
+    <Input
+      handleInputChange={handleInputChange}
+      handleInputSubmit={handleInputSubmit}
+      inputValue={inputValue}
+      handleInputDelete={handleInputDelete}
     />
-    <button type="button" onClick={handleInputDelete}>
-      X
-    </button>
     <Suggestion
       suggestions={suggestions}
       inputValue={inputValue}

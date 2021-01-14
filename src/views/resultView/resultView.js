@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Input from '../../components/Input/input';
 import Suggestion from '../../components/Suggestion/suggestion';
 
 const ResultView = ({
@@ -9,24 +10,35 @@ const ResultView = ({
   handleInputSubmit,
   inputValue,
   handleInputDelete,
+  searchResultTitle,
+  handleSuggestOnClick,
 }) => (
   <div>
     <h1>Results</h1>
-    <input
-      type="text"
-      name="photo"
-      placeholder="Search photo"
-      onChange={handleInputChange}
-      onKeyDown={(e) => handleInputSubmit(e)}
-      value={inputValue}
+    <Input
+      handleInputChange={handleInputChange}
+      handleInputSubmit={handleInputSubmit}
+      inputValue={inputValue}
+      handleInputDelete={handleInputDelete}
     />
-    <button type="button" onClick={handleInputDelete}>
-      X
-    </button>
-    <Suggestion suggestions={suggestions} inputValue={inputValue} />
+    <Suggestion
+      suggestions={suggestions}
+      inputValue={inputValue}
+      handleSuggestOnClick={handleSuggestOnClick}
+    />
+    <div>
+      <h2>{searchResultTitle}</h2>
+    </div>
     <div>
       {result.map((picture) => (
-        <img key={picture.id} src={picture.urls.small} alt="Your search result" />
+        <div key={picture.id}>
+          <img src={picture.urls.small} alt="Your search result" />
+          <div>
+            {picture.tags.map((tag) => (
+              <p key={tag.title}> {tag.title}</p>
+            ))}
+          </div>
+        </div>
       ))}
     </div>
   </div>
