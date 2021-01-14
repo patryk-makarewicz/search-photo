@@ -10,7 +10,7 @@ const Root = () => {
   const [inputValue, setInputValue] = useState('');
   const [suggestions, setSuggestions] = useState(data);
   const [result, setResult] = useState(false);
-  const clientID = 'ZbCzoT4wt2n2oSOfJIJ-lc-dn42o2hLycF2kNtaZyZ0';
+  const clientID = '';
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
