@@ -8,6 +8,7 @@ const StartView = ({
   inputValue,
   handleInputDelete,
   suggestions,
+  handleSuggestOnClick,
 }) => (
   <div>
     <h1>Search photo</h1>
@@ -22,7 +23,11 @@ const StartView = ({
     <button type="button" onClick={handleInputDelete}>
       X
     </button>
-    <Suggestion suggestions={suggestions} inputValue={inputValue} />
+    <Suggestion
+      suggestions={suggestions}
+      inputValue={inputValue}
+      handleSuggestOnClick={handleSuggestOnClick}
+    />
   </div>
 );
 

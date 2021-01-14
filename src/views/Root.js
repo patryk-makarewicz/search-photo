@@ -9,6 +9,7 @@ import ResultView from './resultView/resultView';
 const Root = () => {
   const [inputValue, setInputValue] = useState('');
   const [suggestions, setSuggestions] = useState(data);
+  // eslint-disable-next-line no-unused-vars
   const [result, setResult] = useState(false);
   const clientID = '';
 
@@ -26,10 +27,23 @@ const Root = () => {
     }
   };
 
-  const handleInputSubmit = (e) => {
+  const fetchResults = () => {
     const url = `https://api.unsplash.com/search/photos?page=1&query=${inputValue}&client_id=${clientID}`;
+    axios
+      .get(url)
+      .then((response) => setResult(response.data.results))
+      // eslint-disable-next-line no-console
+      .catch((error) => console.log(error));
+  };
+
+  const handleSuggestOnClick = () => {
+    setInputValue(suggestions);
+    fetchResults();
+  };
+
+  const handleInputSubmit = (e) => {
     if (e.keyCode === 13) {
-      axios.get(url).then((response) => setResult(response.data.results));
+      fetchResults();
     }
   };
 
@@ -47,6 +61,7 @@ const Root = () => {
           handleInputChange={handleInputChange}
           handleInputSubmit={handleInputSubmit}
           handleInputDelete={handleInputDelete}
+          handleSuggestOnClick={handleSuggestOnClick}
         />
       ) : (
         <ResultView
