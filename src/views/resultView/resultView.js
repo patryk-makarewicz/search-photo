@@ -1,7 +1,10 @@
 import React from 'react';
 
+import Suggestion from '../../components/Suggestion/suggestion';
+
 const ResultView = ({
   result,
+  suggestions,
   handleInputChange,
   handleInputSubmit,
   inputValue,
@@ -20,6 +23,7 @@ const ResultView = ({
     <button type="button" onClick={handleInputDelete}>
       X
     </button>
+    <Suggestion suggestions={suggestions} inputValue={inputValue} />
     <div>
       {result.map((picture) => (
         <img key={picture.id} src={picture.urls.small} alt="Your search result" />

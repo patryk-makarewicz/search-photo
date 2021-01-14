@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Suggestion from '../../components/Suggestion/suggestion';
+
 const StartView = ({
   handleInputChange,
   handleInputSubmit,
@@ -20,13 +22,7 @@ const StartView = ({
     <button type="button" onClick={handleInputDelete}>
       X
     </button>
-    {inputValue.length === 3 && (
-      <div>
-        {suggestions.map((item) => (
-          <p item={item}> {item} </p>
-        ))}
-      </div>
-    )}
+    <Suggestion suggestions={suggestions} inputValue={inputValue} />
   </div>
 );
 

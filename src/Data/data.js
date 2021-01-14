@@ -1,1 +1,18 @@
-export const data = ['cars', 'office', 'flower'];
+export const data = [
+  'cars',
+  'office',
+  'flower',
+  'calendar',
+  'clock',
+  'planner',
+  'time',
+  'new year',
+  'sign',
+  'neon',
+  'javascript',
+  'react',
+  'labcontrol',
+  'developer',
+  'gdynia',
+  'git',
+];

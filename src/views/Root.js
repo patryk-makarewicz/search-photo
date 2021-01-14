@@ -51,6 +51,7 @@ const Root = () => {
       ) : (
         <ResultView
           inputValue={inputValue}
+          suggestions={suggestions}
           result={result}
           handleInputChange={handleInputChange}
           handleInputSubmit={handleInputSubmit}
