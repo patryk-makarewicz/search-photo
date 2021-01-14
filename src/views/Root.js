@@ -1,17 +1,29 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import GlobalStyle from 'theme/GlobalStyle';
+import { data } from '../Data/data';
 
 import StartView from './startView/startView';
 import ResultView from './resultView/resultView';
 
 const Root = () => {
   const [inputValue, setInputValue] = useState('');
+  const [suggestions, setSuggestions] = useState(data);
   const [result, setResult] = useState(false);
-  const clientID = '';
+  const clientID = 'ZbCzoT4wt2n2oSOfJIJ-lc-dn42o2hLycF2kNtaZyZ0';
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
+
+    setSuggestions(
+      suggestions.filter((suggest) =>
+        suggest.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()),
+      ),
+    );
+
+    if (!e.target.value.length) {
+      setSuggestions(data);
+    }
   };
 
   const handleInputSubmit = (e) => {
@@ -30,17 +42,18 @@ const Root = () => {
       <GlobalStyle />
       {!result ? (
         <StartView
+          inputValue={inputValue}
+          suggestions={suggestions}
           handleInputChange={handleInputChange}
           handleInputSubmit={handleInputSubmit}
-          inputValue={inputValue}
           handleInputDelete={handleInputDelete}
         />
       ) : (
         <ResultView
+          inputValue={inputValue}
           result={result}
           handleInputChange={handleInputChange}
           handleInputSubmit={handleInputSubmit}
-          inputValue={inputValue}
           handleInputDelete={handleInputDelete}
         />
       )}

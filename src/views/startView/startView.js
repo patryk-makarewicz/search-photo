@@ -1,6 +1,12 @@
 import React from 'react';
 
-const StartView = ({ handleInputChange, handleInputSubmit, inputValue, handleInputDelete }) => (
+const StartView = ({
+  handleInputChange,
+  handleInputSubmit,
+  inputValue,
+  handleInputDelete,
+  suggestions,
+}) => (
   <div>
     <h1>Search photo</h1>
     <input
@@ -14,6 +20,13 @@ const StartView = ({ handleInputChange, handleInputSubmit, inputValue, handleInp
     <button type="button" onClick={handleInputDelete}>
       X
     </button>
+    {inputValue.length === 3 && (
+      <div>
+        {suggestions.map((item) => (
+          <p item={item}> {item} </p>
+        ))}
+      </div>
+    )}
   </div>
 );
 
