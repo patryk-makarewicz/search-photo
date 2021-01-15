@@ -1,0 +1,17 @@
+.headerTitle {
+  color: white;
+  text-align: left;
+  font-size: 36px;
+
+  &Paragraph {
+    @extend .headerTitle;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+}
+
+.paragraphUnderline {
+  text-decoration: underline;
+}

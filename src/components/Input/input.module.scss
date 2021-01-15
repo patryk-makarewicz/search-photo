@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  height: 54px;
+  background-color: white;
+  max-width: 750px;
+  border-radius: 6px;
+}
+
+.innerWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.input {
+  height: 45px;
+  border: none;
+  outline-style: none;
+  font-size: 16px;
+
+  &Button {
+    outline-style: none;
+    border: none;
+    background-color: white;
+    font-weight: 700;
+    color: rgba(40, 44, 52, 0.6);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

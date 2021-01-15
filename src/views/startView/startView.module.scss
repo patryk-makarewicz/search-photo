@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../../assets/mircea-solomiea-Vw_zI3JUuN0-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 15%;
+  width: 1320px;
+  padding: 20px;
+}
