@@ -12,7 +12,7 @@ const Root = () => {
   const [searchResultTitle, setSearchResultTitle] = useState('');
   // eslint-disable-next-line no-unused-vars
   const [result, setResult] = useState(false);
-  const clientID = '';
+  const API_KEY = process.env.REACT_APP_API_KEY;
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -29,7 +29,7 @@ const Root = () => {
   };
 
   const fetchResults = () => {
-    const url = `https://api.unsplash.com/search/photos?page=1&query=${inputValue}&client_id=${clientID}`;
+    const url = `https://api.unsplash.com/search/photos?page=1&query=${inputValue}&client_id=${API_KEY}`;
     axios
       .get(url)
       .then((response) => setResult(response.data.results))
