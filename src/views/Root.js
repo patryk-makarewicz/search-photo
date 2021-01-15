@@ -12,7 +12,7 @@ const Root = () => {
   const [searchResultTitle, setSearchResultTitle] = useState('');
   // eslint-disable-next-line no-unused-vars
   const [result, setResult] = useState(false);
-  const clientID = 'ZbCzoT4wt2n2oSOfJIJ-lc-dn42o2hLycF2kNtaZyZ0';
+  const clientID = '';
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
