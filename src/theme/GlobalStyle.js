@@ -17,7 +17,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
     font-family: "Montserrat", sans-serif;
     background-color: white;
-    max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

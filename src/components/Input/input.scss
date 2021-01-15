@@ -1,39 +1,46 @@
-.wrapper {
-  display: flex;
-  justify-content: flex-start;
-  height: 54px;
-  background-color: white;
-  max-width: 750px;
-  border-radius: 6px;
-}
-
 .input {
   height: 45px;
   border: none;
   outline-style: none;
   font-size: 16px;
-
-  &Button {
+  &--result {
+    background-color: rgb(230, 230, 230);
+  }
+  &__button {
     outline-style: none;
     border: none;
     background-color: white;
     font-weight: 700;
     color: rgba(40, 44, 52, 0.6);
-
+    &--result {
+      background-color: rgb(230, 230, 230);
+    }
     &:hover {
       opacity: 0.7;
     }
   }
-
-  &Icon {
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    height: 54px;
+    background-color: white;
+    max-width: 750px;
+    border-radius: 6px;
+    &--result {
+      background-color: rgb(230, 230, 230);
+      border-radius: 50px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &__icon {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 10px;
     color: rgb(147, 149, 151);
   }
-
-  &Wrapper {
+  &__wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;

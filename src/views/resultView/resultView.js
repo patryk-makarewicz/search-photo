@@ -20,47 +20,51 @@ const ResultView = ({
   const handleOpenCloseModal = () => setShowModal(!showModal);
 
   return (
-    <div>
-      <h1>Results</h1>
-      <Input
-        handleInputChange={handleInputChange}
-        handleInputSubmit={handleInputSubmit}
-        inputValue={inputValue}
-        handleInputDelete={handleInputDelete}
-      />
-      <Suggestion
-        suggestions={suggestions}
-        inputValue={inputValue}
-        handleSuggestOnClick={handleSuggestOnClick}
-      />
-      <div>
-        <h2>{searchResultTitle}</h2>
-      </div>
-      <div>
-        {result.map((picture) => (
-          // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-          <div key={picture.id} onClick={handleOpenCloseModal}>
-            <img src={picture.urls.small} alt="Your search result" />
-            <div>
-              {picture.tags.map((tag) => (
-                <p key={tag.title}> {tag.title}</p>
-              ))}
-            </div>
-            {showModal === true && (
-              <div className={styles.modalOpen}>
-                <button type="submit" onClick={handleOpenCloseModal}>
-                  X
-                </button>
-                <div>
-                  <img src={picture.user.profile_image.small} alt="Author" />
-                  <p>{picture.user.name}</p>
-                </div>
-                <img src={picture.urls.thumb} alt="Your search result" />
-                <p>{picture.alt_description}</p>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <Input
+          classNameInput="input input--result"
+          classNameButton="input__button input__button--result"
+          classNameContainer="input__container input__container--result "
+          handleInputChange={handleInputChange}
+          handleInputSubmit={handleInputSubmit}
+          inputValue={inputValue}
+          handleInputDelete={handleInputDelete}
+        />
+        <Suggestion
+          suggestions={suggestions}
+          inputValue={inputValue}
+          handleSuggestOnClick={handleSuggestOnClick}
+        />
+        <div>
+          <h2>{searchResultTitle}</h2>
+        </div>
+        <div>
+          {result.map((picture) => (
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+            <div key={picture.id} onClick={handleOpenCloseModal}>
+              <img src={picture.urls.small} alt="Your search result" />
+              <div>
+                {picture.tags.map((tag) => (
+                  <p key={tag.title}> {tag.title}</p>
+                ))}
               </div>
-            )}
-          </div>
-        ))}
+              {showModal === true && (
+                <div className={styles.modalOpen}>
+                  <button type="submit" onClick={handleOpenCloseModal}>
+                    X
+                  </button>
+                  <div>
+                    <img src={picture.user.profile_image.small} alt="Author" />
+                    <p>{picture.user.name}</p>
+                  </div>
+                  <img src={picture.urls.thumb} alt="Your search result" />
+                  <p>{picture.alt_description}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

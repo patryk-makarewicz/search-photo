@@ -17,6 +17,9 @@ const StartView = ({
     <div className={styles.wrapper}>
       <Header />
       <Input
+        classNameInput="input"
+        classNameButton="input__button"
+        classNameContainer="input__container"
         handleInputChange={handleInputChange}
         handleInputSubmit={handleInputSubmit}
         inputValue={inputValue}
