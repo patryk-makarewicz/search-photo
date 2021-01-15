@@ -7,13 +7,25 @@
 }
 
 .list {
-  padding-left: 10px;
+  padding-left: 0;
   &Item {
     list-style: none;
     text-align: left;
+    line-height: 40px;
 
     &:hover {
-      opacity: 0.5;
+      opacity: 0.6;
+      background-color: rgb(206, 206, 206);
+    }
+
+    &NoSuggestion {
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    &Name {
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 }

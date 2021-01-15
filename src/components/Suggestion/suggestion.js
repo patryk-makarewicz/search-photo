@@ -12,14 +12,14 @@ const Suggestion = ({ suggestions, inputValue, handleSuggestOnClick }) => (
             {suggestions.map((suggest) => (
               // eslint-disable-next-line jsx-a11y/click-events-have-key-events
               <li className={styles.listItem} key={suggest} onClick={() => handleSuggestOnClick()}>
-                {suggest}
+                <div className={styles.listItemName}>{suggest}</div>
               </li>
             ))}
           </ul>
         )}
       </div>
     ) : (
-      <p>No suggestion, but type and see the result!</p>
+      <p className={styles.listItemNoSuggestion}>No suggestion, but type and see the result!</p>
     )}
   </div>
 );

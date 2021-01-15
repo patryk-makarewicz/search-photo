@@ -1,10 +1,14 @@
 import React from 'react';
+import { FaSearch } from 'react-icons/fa';
 
 import styles from './input.module.scss';
 
 const Input = ({ handleInputChange, handleInputSubmit, inputValue, handleInputDelete }) => (
   <div className={styles.wrapper}>
-    <div className={styles.innerWrapper}>
+    <div className={styles.inputIcon}>
+      <FaSearch />
+    </div>
+    <div className={styles.inputWrapper}>
       <input
         className={styles.input}
         autoComplete="off"
@@ -15,9 +19,11 @@ const Input = ({ handleInputChange, handleInputSubmit, inputValue, handleInputDe
         onKeyDown={(e) => handleInputSubmit(e)}
         value={inputValue}
       />
-      <button className={styles.inputButton} type="button" onClick={handleInputDelete}>
-        X
-      </button>
+      {inputValue.length >= 1 ? (
+        <button className={styles.inputButton} type="button" onClick={handleInputDelete}>
+          X
+        </button>
+      ) : null}
     </div>
   </div>
 );
