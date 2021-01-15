@@ -16,6 +16,9 @@ const ResultView = ({
   handleSuggestOnClick,
 }) => {
   const [showModal, setShowModal] = useState(false);
+
+  const handleOpenCloseModal = () => setShowModal(!showModal);
+
   return (
     <div>
       <h1>Results</h1>
@@ -36,7 +39,7 @@ const ResultView = ({
       <div>
         {result.map((picture) => (
           // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-          <div key={picture.id} onClick={() => setShowModal(true)}>
+          <div key={picture.id} onClick={handleOpenCloseModal}>
             <img src={picture.urls.small} alt="Your search result" />
             <div>
               {picture.tags.map((tag) => (
@@ -44,8 +47,16 @@ const ResultView = ({
               ))}
             </div>
             {showModal === true && (
-              <div className={styles.modal}>
-                <img src={picture.urls.thumb} alt="Your search result" />{' '}
+              <div className={styles.modalOpen}>
+                <button type="submit" onClick={handleOpenCloseModal}>
+                  X
+                </button>
+                <div>
+                  <img src={picture.user.profile_image.small} alt="Author" />
+                  <p>{picture.user.name}</p>
+                </div>
+                <img src={picture.urls.thumb} alt="Your search result" />
+                <p>{picture.alt_description}</p>
               </div>
             )}
           </div>
