@@ -26,6 +26,7 @@ const StartView = ({
         handleInputDelete={handleInputDelete}
       />
       <Suggestion
+        classNameContainer="list__container"
         suggestions={suggestions}
         inputValue={inputValue}
         handleSuggestOnClick={handleSuggestOnClick}

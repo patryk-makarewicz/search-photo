@@ -32,6 +32,7 @@ const ResultView = ({
           handleInputDelete={handleInputDelete}
         />
         <Suggestion
+          classNameContainer="list__container list__container--result"
           suggestions={suggestions}
           inputValue={inputValue}
           handleSuggestOnClick={handleSuggestOnClick}

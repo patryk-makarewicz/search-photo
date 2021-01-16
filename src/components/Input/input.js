@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { FaSearch } from 'react-icons/fa';
-
 import './input.scss';
 
 const Input = ({
