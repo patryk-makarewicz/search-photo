@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from 'react';
 
@@ -8,22 +9,23 @@ const Photos = ({ result, searchResultTitle }) => {
 
   const handleOpenCloseModal = () => setShowModal(!showModal);
   return (
-    <div>
-      <div>
+    <>
+      <header className="photos__header">
         <h2>{searchResultTitle}</h2>
-      </div>
-      <div>
+      </header>
+      <div className="photos__wrapper">
         {result.map((picture) => (
-          // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-          <div key={picture.id} onClick={handleOpenCloseModal}>
-            <img src={picture.urls.small} alt="Your search result" />
+          <div className="photos" key={picture.id} onClick={handleOpenCloseModal}>
+            <img className="photos__photo" src={picture.urls.small} alt="Your search result" />
             <div>
               {picture.tags.map((tag) => (
-                <p key={tag.title}> {tag.title}</p>
+                <span className="photos__tag" key={tag.title}>
+                  {tag.title}
+                </span>
               ))}
             </div>
             {showModal === true && (
-              <div className="modalOpen">
+              <div className="photos__modalOpen">
                 <button type="submit" onClick={handleOpenCloseModal}>
                   X
                 </button>
@@ -38,7 +40,7 @@ const Photos = ({ result, searchResultTitle }) => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

@@ -10,7 +10,6 @@ const Root = () => {
   const [inputValue, setInputValue] = useState('');
   const [suggestions, setSuggestions] = useState(data);
   const [searchResultTitle, setSearchResultTitle] = useState('');
-  // eslint-disable-next-line no-unused-vars
   const [result, setResult] = useState(false);
   const API_KEY = process.env.REACT_APP_API_KEY;
 

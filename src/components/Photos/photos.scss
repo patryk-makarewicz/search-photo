@@ -1,7 +1,40 @@
-.modalOpen {
+.photos__modalOpen {
   width: 500px;
   height: 500px;
   background-color: white;
   z-index: 1000;
   color: black;
+}
+
+.photos__header {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.photos__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.photos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px;
+  max-width: 400px;
+  height: 100%;
+}
+
+.photos__photo {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.photos__tag {
+  background-color: rgb(230, 230, 230);
+  margin-right: 10px;
+  border-radius: 3px;
+  padding: 8px;
 }
