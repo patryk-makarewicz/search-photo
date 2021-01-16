@@ -1,9 +1,30 @@
 import React from 'react';
 
-import styles from './startView.module.scss';
+import styled from 'styled-components';
+import background from '../../assets/mircea-solomiea-Vw_zI3JUuN0-unsplash.jpg';
 import Header from '../../components/Header/header';
 import Input from '../../components/Input/input';
 import Suggestion from '../../components/Suggestion/suggestion';
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(${background});
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 15%;
+  width: 1320px;
+  padding: 20px;
+`;
 
 const StartView = ({
   handleInputChange,
@@ -13,8 +34,8 @@ const StartView = ({
   suggestions,
   handleSuggestOnClick,
 }) => (
-  <div className={styles.container}>
-    <div className={styles.wrapper}>
+  <Container>
+    <Wrapper>
       <Header />
       <Input
         classNameInput="input"
@@ -31,8 +52,8 @@ const StartView = ({
         inputValue={inputValue}
         handleSuggestOnClick={handleSuggestOnClick}
       />
-    </div>
-  </div>
+    </Wrapper>
+  </Container>
 );
 
 export default StartView;
