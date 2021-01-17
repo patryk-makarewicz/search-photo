@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 
 import './photos.scss';
+import Modal from '../Modal/modal';
 
 const Photos = ({ result, searchResultTitle }) => {
   const [showModal, setShowModal] = useState(false);
@@ -18,7 +19,7 @@ const Photos = ({ result, searchResultTitle }) => {
         {result.map((picture) => (
           <div className="photos" key={picture.id}>
             <img
-              className="photos__photo"
+              className="photos__picture"
               src={picture.urls.small}
               alt="Your search result"
               id={picture.id}
@@ -32,17 +33,7 @@ const Photos = ({ result, searchResultTitle }) => {
               ))}
             </div>
             {showModal === picture.id && (
-              <div className="photos__modalOpen">
-                <button type="button" onClick={handleOpenCloseModal}>
-                  X
-                </button>
-                <div>
-                  <img src={picture.user.profile_image.small} alt="Author" />
-                  <p>{picture.user.name}</p>
-                </div>
-                <img src={picture.urls.thumb} alt="Your search result" />
-                <p>{picture.alt_description}</p>
-              </div>
+              <Modal picture={picture} handleOpenCloseModal={handleOpenCloseModal} />
             )}
           </div>
         ))}

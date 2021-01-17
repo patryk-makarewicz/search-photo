@@ -3,8 +3,8 @@ import axios from 'axios';
 import GlobalStyle from 'theme/GlobalStyle';
 import { data } from '../Data/data';
 
-import StartView from './startView/startView';
-import ResultView from './resultView/resultView';
+import StartView from './startView';
+import ResultView from './resultView';
 
 const Root = () => {
   const [inputValue, setInputValue] = useState('');

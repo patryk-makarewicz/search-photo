@@ -1,9 +1,9 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import Input from '../../components/Input/input';
-import Photos from '../../components/Photos/photos';
-import Suggestion from '../../components/Suggestion/suggestion';
+import Input from '../components/Input/input';
+import Photos from '../components/Photos/photos';
+import Suggestion from '../components/Suggestion/suggestion';
 
 const Container = styled.div`
   display: flex;

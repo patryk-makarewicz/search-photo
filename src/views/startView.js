@@ -1,10 +1,10 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import background from '../../assets/mircea-solomiea-Vw_zI3JUuN0-unsplash.jpg';
-import Header from '../../components/Header/header';
-import Input from '../../components/Input/input';
-import Suggestion from '../../components/Suggestion/suggestion';
+import background from '../assets/mircea-solomiea-Vw_zI3JUuN0-unsplash.jpg';
+import Header from '../components/Header/header';
+import Input from '../components/Input/input';
+import Suggestion from '../components/Suggestion/suggestion';
 
 const Container = styled.div`
   display: flex;
