@@ -1,6 +1,8 @@
+![cover](./public/cover.png)
+
 # General info
 
-In construction - this is an app for searching photos from Unsplash API.
+This is an app for searching photos from Unsplash API.
 <br />
 
 ## Getting Started with Create React App
