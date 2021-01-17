@@ -3,7 +3,12 @@
 # General info
 
 This is an app for searching photos from Unsplash API.
-<br />
+
+## Projects live
+
+To watch click [here] 
+
+[here]: https://search-photo.netlify.app/
 
 ## Getting Started with Create React App
 
