@@ -74,20 +74,16 @@ const Root = () => {
           )}
         </Route>
         <Route path="/photos">
-          {!result ? (
-            <Redirect to="/" />
-          ) : (
-            <ResultView
-              inputValue={inputValue}
-              suggestions={suggestions}
-              result={result}
-              handleInputChange={handleInputChange}
-              handleInputSubmit={handleInputSubmit}
-              handleInputDelete={handleInputDelete}
-              handleSuggestOnClick={handleSuggestOnClick}
-              searchResultTitle={searchResultTitle}
-            />
-          )}
+          <ResultView
+            inputValue={inputValue}
+            suggestions={suggestions}
+            result={result}
+            handleInputChange={handleInputChange}
+            handleInputSubmit={handleInputSubmit}
+            handleInputDelete={handleInputDelete}
+            handleSuggestOnClick={handleSuggestOnClick}
+            searchResultTitle={searchResultTitle}
+          />
         </Route>
       </Switch>
     </Router>
