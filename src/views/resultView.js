@@ -30,16 +30,16 @@ const ResultView = ({
   <Container>
     <Wrapper>
       <Input
-        classNameInput="input input--result"
-        classNameButton="input__button input__button--result"
-        classNameContainer="input__container input__container--result "
+        classNameInput="input input--background"
+        classNameButton="input__button input__button--background"
+        classNameContainer="input__container input__container--background "
         handleInputChange={handleInputChange}
         handleInputSubmit={handleInputSubmit}
         inputValue={inputValue}
         handleInputDelete={handleInputDelete}
       />
       <Suggestion
-        classNameContainer="list__container list__container--result"
+        classNameContainer="list__container list__container--background"
         suggestions={suggestions}
         inputValue={inputValue}
         handleSuggestOnClick={handleSuggestOnClick}

@@ -9,20 +9,17 @@
     text-align: left;
     margin-left: 20px;
   }
-  &__picture {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: 320px;
-
-    @media screen and (min-width: 425px) {
-      width: 100%;
-    }
-  }
-  &__tag {
+  &__noResults {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vh;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgb(230, 230, 230);
-    margin-right: 10px;
-    border-radius: 3px;
-    padding: 8px;
+    border-radius: 12px;
+    padding: 10px;
+    color: rgba(40, 44, 52, 0.6);
   }
   &__wrapper {
     display: flex;
