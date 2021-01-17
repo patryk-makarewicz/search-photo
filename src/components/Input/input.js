@@ -14,7 +14,7 @@ const Input = ({
   classNameInput,
 }) => {
   return (
-    <div className={classNameContainer}>
+    <form className={classNameContainer}>
       <div className="input__icon">
         <FaSearch />
       </div>
@@ -30,12 +30,12 @@ const Input = ({
           value={inputValue}
         />
         {inputValue.length >= 1 ? (
-          <button className={classNameButton} type="button" onClick={handleInputDelete}>
+          <button className={classNameButton} type="submit" onClick={handleInputDelete}>
             X
           </button>
         ) : null}
       </div>
-    </div>
+    </form>
   );
 };
 
