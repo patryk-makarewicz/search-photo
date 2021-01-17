@@ -41,10 +41,14 @@ const Input = ({
 
 Input.propTypes = {
   classNameContainer: PropTypes.string,
+  classNameInput: PropTypes.string,
+  classNameButton: PropTypes.string,
 };
 
 Input.defaultProps = {
   classNameContainer: '',
+  classNameInput: '',
+  classNameButton: '',
 };
 
 export default Input;

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
+
 import GlobalStyle from 'theme/GlobalStyle';
 import { data } from '../Data/data';
-
 import StartView from './startView';
 import ResultView from './resultView';
 
@@ -55,30 +56,41 @@ const Root = () => {
   };
 
   return (
-    <>
+    <Router>
       <GlobalStyle />
-      {!result ? (
-        <StartView
-          inputValue={inputValue}
-          suggestions={suggestions}
-          handleInputChange={handleInputChange}
-          handleInputSubmit={handleInputSubmit}
-          handleInputDelete={handleInputDelete}
-          handleSuggestOnClick={handleSuggestOnClick}
-        />
-      ) : (
-        <ResultView
-          inputValue={inputValue}
-          suggestions={suggestions}
-          result={result}
-          handleInputChange={handleInputChange}
-          handleInputSubmit={handleInputSubmit}
-          handleInputDelete={handleInputDelete}
-          handleSuggestOnClick={handleSuggestOnClick}
-          searchResultTitle={searchResultTitle}
-        />
-      )}
-    </>
+      <Switch>
+        <Route exact path="/">
+          {result ? (
+            <Redirect to="/photos" />
+          ) : (
+            <StartView
+              inputValue={inputValue}
+              suggestions={suggestions}
+              handleInputChange={handleInputChange}
+              handleInputSubmit={handleInputSubmit}
+              handleInputDelete={handleInputDelete}
+              handleSuggestOnClick={handleSuggestOnClick}
+            />
+          )}
+        </Route>
+        <Route path="/photos">
+          {!result ? (
+            <Redirect to="/" />
+          ) : (
+            <ResultView
+              inputValue={inputValue}
+              suggestions={suggestions}
+              result={result}
+              handleInputChange={handleInputChange}
+              handleInputSubmit={handleInputSubmit}
+              handleInputDelete={handleInputDelete}
+              handleSuggestOnClick={handleSuggestOnClick}
+              searchResultTitle={searchResultTitle}
+            />
+          )}
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
