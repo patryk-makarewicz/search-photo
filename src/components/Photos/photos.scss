@@ -6,6 +6,8 @@
   max-width: 400px;
   max-height: 100%;
   &__header {
+    border-top: 1px solid black;
+    margin-top: 30px;
     text-align: left;
     margin-left: 20px;
   }
@@ -20,6 +22,21 @@
     border-radius: 12px;
     padding: 10px;
     color: rgba(40, 44, 52, 0.6);
+  }
+  &__picture {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 320px;
+
+    @media screen and (min-width: 425px) {
+      width: 100%;
+    }
+  }
+  &__tag {
+    background-color: rgb(230, 230, 230);
+    margin-right: 10px;
+    border-radius: 3px;
+    padding: 8px;
   }
   &__wrapper {
     display: flex;

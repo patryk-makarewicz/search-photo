@@ -1,8 +1,8 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 
 import './photos.scss';
-import Picture from './components/picture';
-import Tag from './components/tag';
 import Modal from '../Modal/modal';
 
 const Photos = ({ result, searchResultTitle }) => {
@@ -19,10 +19,18 @@ const Photos = ({ result, searchResultTitle }) => {
         <div className="photos__wrapper">
           {result.map((picture) => (
             <div className="photos" key={picture.id}>
-              <Picture picture={picture} handleOpenCloseModal={handleOpenCloseModal} />
+              <img
+                className="photos__picture"
+                src={picture.urls.small}
+                alt="Your search result"
+                id={picture.id}
+                onClick={handleOpenCloseModal}
+              />
               <div>
                 {picture.tags.map((tag) => (
-                  <Tag tag={tag} />
+                  <span className="photos__tag" key={tag.title}>
+                    {tag.title}
+                  </span>
                 ))}
               </div>
               {showModal === picture.id && (
