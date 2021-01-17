@@ -3,7 +3,7 @@ import React from 'react';
 import './modal.scss';
 
 const Modal = ({ picture, handleOpenCloseModal }) => (
-  <div className="modal__open">
+  <div className="modal">
     <div className="modal__wrapper">
       <div className="modal__info">
         <div className="modal__author">
