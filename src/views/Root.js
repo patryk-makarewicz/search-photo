@@ -30,7 +30,7 @@ const Root = () => {
 
   const fetchResults = () => {
     const orientation = 'landscape';
-    const quantity = 15;
+    const quantity = 21;
     const url = `https://api.unsplash.com/search/photos?page=1&orientation=${orientation}&per_page=${quantity}&query=${inputValue}&client_id=${API_KEY}`;
     axios
       .get(url)
