@@ -29,7 +29,9 @@ const Root = () => {
   };
 
   const fetchResults = () => {
-    const url = `https://api.unsplash.com/search/photos?page=1&query=${inputValue}&client_id=${API_KEY}`;
+    const orientation = 'landscape';
+    const quantity = 15;
+    const url = `https://api.unsplash.com/search/photos?page=1&orientation=${orientation}&per_page=${quantity}&query=${inputValue}&client_id=${API_KEY}`;
     axios
       .get(url)
       .then((response) => setResult(response.data.results))
