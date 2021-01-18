@@ -23,8 +23,9 @@
     margin-right: 10px;
   }
   &__button {
-    width: 24px;
-    height: 24px;
+    outline-style: none;
+    border: none;
+    background-color: white;
     font-weight: 700;
     color: rgba(40, 44, 52, 0.6);
     &:hover {
