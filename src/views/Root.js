@@ -29,9 +29,8 @@ const Root = () => {
   };
 
   const fetchResults = () => {
-    const orientation = 'landscape';
     const quantity = 21;
-    const url = `https://api.unsplash.com/search/photos?page=1&orientation=${orientation}&per_page=${quantity}&query=${inputValue}&client_id=${API_KEY}`;
+    const url = `https://api.unsplash.com/search/photos?page=1&per_page=${quantity}&query=${inputValue}&client_id=${API_KEY}`;
     axios
       .get(url)
       .then((response) => setResult(response.data.results))
@@ -78,12 +77,10 @@ const Root = () => {
         <Route path="/photos">
           <ResultView
             inputValue={inputValue}
-            suggestions={suggestions}
             result={result}
             handleInputChange={handleInputChange}
             handleInputSubmit={handleInputSubmit}
             handleInputDelete={handleInputDelete}
-            handleSuggestOnClick={handleSuggestOnClick}
             searchResultTitle={searchResultTitle}
           />
         </Route>
