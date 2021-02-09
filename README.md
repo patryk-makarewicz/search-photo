@@ -4,6 +4,15 @@
 
 This is an app for searching photos from Unsplash API.
 
+## What's inside?
+
+✔ React<br />
+✔ JavaScript ES6<br />
+✔ HTML5<br />
+✔ CSS3<br />
+✔ SCSS & BEM<br />
+✔ Styled-Components<br />
+
 ## Projects live
 
 To watch click [here] 
